@@ -1,5 +1,5 @@
 <?php
-use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
 function route_class(){
-  return str_replace('.','-',Route::currenRouteName());
+  return str_replace('.','-',Route::currentRouteName());
 }

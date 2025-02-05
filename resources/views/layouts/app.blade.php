@@ -13,7 +13,7 @@
 </head>
 <body>
     <div id=app class="{{route_class()}}-page">
-        @include('lyouts._header')
+        @include('layouts._header')
 
         <div class="container">
 
@@ -23,7 +23,7 @@
 
         </div>
 
-        @include('lyouts._footer')
+        @include('layouts._footer')
     </div>
     {{-- script --}}
     <script src="{{mix('js/app.js')}}"></script>
