@@ -32,10 +32,13 @@
 
           <div class="mb-4">
             <label for="" class="avatar-label form-label">用户头像</label>
-            <input type="file" name="avatar" class="form-control">
+              <input  type="file" onchange="showImg(this)" name="avatar" class="form-control mb-4">
             @if($user->avatar)
               <br>
-              <img class="thumbnail img-responsive" src="{{ $user->avatar }}" width="200" />
+              <img  id='portrait' class="thumbnail img-responsive" src="{{ $user->avatar }}" width="200" />
+            @else
+              <br>
+               <img id='portrait' src='' style="display: none" width="200" >
             @endif
           </div>
 
@@ -47,5 +50,21 @@
     </div>
   </div>
 </div>
-
+<script type="text/javascript">
+  function  showImg(source){
+    var file = source.files[0];
+    console.log(file)
+    if (window.FileReader){
+      var fr = new FileReader();
+      console.log(fr);
+      var portrait = document.getElementById('portrait');
+      console.log(portrait)
+      fr.onloadend =function(e){
+        portrait.src=e.target.result;
+      }
+      fr.readAsDataURL(file);
+      portrait.style.display='block';
+    }
+  }
+</script>
 @endsection
