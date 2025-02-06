@@ -11,7 +11,6 @@
       <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
           <!-- Left Side Of Navbar -->
       <ul class="navbar-nav mr-auto">
-        <h1>{{active_class(if_route('topics.index'))}}</h1>
         <li class="nav-item "><a class="nav-link {{active_class(if_route('topics.index'))}}" href="{{ route('topics.index') }}">话题</a></li>
         <li class="nav-item"><a class="nav-link {{ category_nav_active(1) }}" href="{{ route('categories.show', 1) }}">分享</a></li>
         <li class="nav-item"><a class="nav-link {{ category_nav_active(2) }}" href="{{ route('categories.show', 2) }}">教程</a></li>
