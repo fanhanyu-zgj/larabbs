@@ -11,6 +11,7 @@ use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Support\Str;
+use Symfony\Component\Routing\Loader\Configurator\Traits\AddTrait;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -20,6 +21,7 @@ class User extends Authenticatable implements MustVerifyEmail
     }
     use HasRoles;
     use Traits\ActiveUserHelper;
+    use Traits\LastActivedAtHelper;
     /**
      * The attributes that are mass assignable.
      *
