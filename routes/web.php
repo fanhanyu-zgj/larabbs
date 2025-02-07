@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', 'PageController@root')->name('root');
+Route::get('/', 'TopicsController@index')->name('root');
 
 //Auth::routes();
 
