@@ -19,6 +19,7 @@ class User extends Authenticatable implements MustVerifyEmail
         notify as protected laravelNotify;
     }
     use HasRoles;
+    use Traits\ActiveUserHelper;
     /**
      * The attributes that are mass assignable.
      *
